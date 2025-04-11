@@ -22,7 +22,6 @@ import {
 const countries = [
   { value: "united-states", label: "United States" },
   { value: "canada", label: "Canada" },
-  { value: "brazil", label: "Brazil" },
   { value: "united-kingdom", label: "United Kingdom" },
   { value: "germany", label: "Germany" },
   { value: "france", label: "France" },
@@ -32,14 +31,8 @@ const countries = [
   { value: "japan", label: "Japan" },
   { value: "india", label: "India" },
   { value: "australia", label: "Australia" },
-  { value: "south-korea", label: "South Korea" },
-  { value: "mexico", label: "Mexico" },
   { value: "saudi-arabia", label: "Saudi Arabia" },
   { value: "south-africa", label: "South Africa" },
-  { value: "nigeria", label: "Nigeria" },
-  { value: "indonesia", label: "Indonesia" },
-  { value: "argentina", label: "Argentina" },
-  { value: "turkey", label: "Turkey" }
 ]
 
 
