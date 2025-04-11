@@ -8,7 +8,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [amount, setAmount] = useState<string>("");
-  const [currency, setCurrency] = useState<string>("");
+  const [currency, setCurrency] = useState<string>("USD");
   return (
     <>
       {/* <div className="text-3xl text-center m-2.5 text-">Can You Afford This</div> */}
@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       <div className="w-full justify-between bg-gray-50 flex gap-0 p-2 border-blue-500">
-        <div className="flex w-1/2">
+        <div className="flex w-2/3">
           <div className="w-full p-2 bg-gray-50">
             <DropDown value={currency} onChangeAction={setCurrency}></DropDown>
           </div>
@@ -41,7 +41,7 @@ export default function Home() {
       </div>
 
       <div>
-        <CardGrid></CardGrid>
+        <CardGrid currencySelected={currency} />
       </div>
 
       {/* <div className="w-full">

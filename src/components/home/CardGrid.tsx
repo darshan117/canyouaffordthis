@@ -4,7 +4,11 @@ import { products } from "@/data/products";
 import { useState } from "react";
 import { Product } from "@/lib/types";
 
-export default function ProductGrid() {
+export default function ProductGrid({
+  currencySelected,
+}: {
+  currencySelected: string;
+}) {
   const [open, setOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
@@ -20,6 +24,7 @@ export default function ProductGrid() {
           <ProductCard
             key={i}
             {...product}
+            currencySelected={currencySelected}
             onClick={() => handleClick(product)}
           />
         ))}
@@ -29,6 +34,7 @@ export default function ProductGrid() {
         <DialogNew
           open={open}
           onOpenChange={setOpen}
+          currencySelected={currencySelected}
           product={selectedProduct}
         />
       )}

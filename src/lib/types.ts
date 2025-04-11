@@ -1,8 +1,11 @@
+import { StaticImageData } from "next/image";
+
 export type Product = {
-  image: string;
+  image: string | StaticImageData;
   product_name: string;
   description: string;
-  price: string;
+  price: Record<string, string>;
+  category: String;
 };
 
 export type DialogNewProps = {
