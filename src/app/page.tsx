@@ -1,5 +1,5 @@
 'use client';
-import CardComp from "@/components/home/CardComp";
+import CardComp from "@/components/home/ProductCard";
 import CardGrid from "@/components/home/CardGrid";
 import DropDown from "@/components/home/dropdownNew";
 import NumberInput from "@/components/home/NumberInput";
