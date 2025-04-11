@@ -5,36 +5,22 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card";
-import Image from "next/image";
+} from "@/components/ui/card"
 
-type Item = {
-  name: string;
-  price: string;
-  link: string;
-};
+export default function CardNew(){
+    return(
+        <Card>
+            <CardHeader>
+                <CardTitle>Card Title</CardTitle>
+                <CardDescription>Card Description</CardDescription>
+            </CardHeader>
+            <CardContent>
+                <p>Card Content</p>
+            </CardContent>
+            <CardFooter>
+                <p>Card Footer</p>
+            </CardFooter>
+        </Card>
 
-export default function CardComp({ name, price, link }: Item) {
-  return (
-    <>
-      <Card className="w-fit rounded-none border-2 border-black">
-        <Image
-          src={"https://www.google.com"}
-          width={40}
-          height={40}
-          alt="item image"
-        />
-        <CardHeader>
-          <CardTitle>{name}</CardTitle>
-          <CardDescription>{price}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Add this later</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card somehthing somethingt Add</p>
-        </CardFooter>
-      </Card>
-    </>
-  );
+    );
 }
