@@ -6,7 +6,7 @@ const products = [
     product_name: "Cool Sneakers",
     description: "Lightweight running shoes with breathable mesh.",
     price: "$79.99",
-    category: ""
+    category: "",
   },
   {
     image: "/images/shoe2.jpg",

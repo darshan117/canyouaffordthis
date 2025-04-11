@@ -6,15 +6,19 @@ import { Input } from "@/components/ui/input";
 
 interface NumberInputProps {
   value: string;
-  onChange: (value: string) => void;
+  onChangeAction: (value: string) => void;
   placeholder?: string;
 }
 
-const NumberInput: React.FC<NumberInputProps> = ({ value, onChange, placeholder }) => {
+const NumberInput: React.FC<NumberInputProps> = ({
+  value,
+  onChangeAction,
+  placeholder,
+}) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value;
     if (/^\d*\.?\d{0,2}$/.test(val)) {
-      onChange(val);
+      onChangeAction(val);
     }
   };
 
