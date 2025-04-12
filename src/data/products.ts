@@ -4,7 +4,6 @@ import gwagon from "@/../public/gwagon.jpeg";
 import lvbag from "@/../public/lvbag.webp";
 import porsche from "@/../public/porsche.jpeg";
 import ferrari from "@/../public/ferrari.webp";
-import casiowatch from "@/../public/casio ga b2100.jpeg";
 import galaxy from "@/../public/galaxy tab s9 fe.jpeg";
 import civic from "@/../public/honda civic.jpeg";
 import seltos from "@/../public/kia seltos.jpeg";
@@ -18,23 +17,6 @@ export const products = [
     image: iphone,
     product_name: "iPhone 16 Pro Max",
     description: "Latest flagship smartphone from Apple",
-    price: {
-      USD: "1,199",
-      INR: "1,59,900",
-      CAD: "1,635",
-      EUR: "1,110",
-      JPY: "1,79,000",
-      RUB: "1,06,000",
-      CNY: "8,700",
-      AUD: "1,840",
-      AED: "4,400",
-    },
-    category: "Phone",
-  },
-  {
-    image: casiowatch,
-    product_name: "Casio Watch",
-    description: "Casio Watch automatic watch",
     price: {
       USD: "1,199",
       INR: "1,59,900",

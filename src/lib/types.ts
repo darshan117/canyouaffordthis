@@ -5,7 +5,7 @@ export type Product = {
   product_name: string;
   description: string;
   price: Record<string, string>;
-  category: String;
+  category: string;
 };
 
 export type DialogNewProps = {
