@@ -1,5 +1,6 @@
 "use client";
 import CardGrid from "@/components/home/CardGrid";
+import ChangeCategory from "@/components/home/ChangeCategory";
 import DropDown from "@/components/home/dropdownNew";
 import NumberInput from "@/components/home/NumberInput";
 import { Button } from "@/components/ui/button";
@@ -9,6 +10,7 @@ import { useState } from "react";
 export default function Home() {
   const [amount, setAmount] = useState<string>("");
   const [currency, setCurrency] = useState<string>("USD");
+  const [category, setCategory] = useState<string>("Popular");
   return (
     <>
       {/* <div className="text-3xl text-center m-2.5 text-">Can You Afford This</div> */}
@@ -20,28 +22,31 @@ export default function Home() {
         </header>
       </div>
 
-      <div className="w-full justify-between bg-gray-50 flex gap-0 p-2 border-blue-500">
-        <div className="flex w-2/3">
-          <div className="w-full p-2 bg-gray-50">
+      <div className="w-full md:justify-between bg-gray-50 lg:flex gap-0 p-2 border-blue-500">
+        <div className="md:flex lg:w-2/3 w-full">
+          <div className="lg:w-1/3 md:w-full p-2 bg-gray-50">
             <DropDown value={currency} onChangeAction={setCurrency}></DropDown>
           </div>
-          <div className="text-lg w-2/3 bg-gray-50 p-3">Enter your Salary:</div>
-          <div className="w-full gap-2 p-2 bg-gray-50">
-            <div className="flex-1 w-full">
+          <div className="text-md lg:w-1/4 md:w-2/3 bg-gray-50 p-2">
+            Enter your Salary:
+          </div>
+          <div className="lg:w-1/2 w-full gap-2 p-2 bg-gray-50">
+            <div className="md:flex-1 w-full">
+              {/* on enter do something */}
               <NumberInput value={amount} onChangeAction={setAmount} />
             </div>
           </div>
         </div>
         {/* <Input type="number" placeholder="Enter amount" /> */}
-        <div className="flex w-1/6 ">
+        <div className="md:flex w-1/4 ">
           <div className="p-2 bg-gray-50">
-            <Button>Change category</Button>
+            <ChangeCategory value={category} onChangeAction={setCategory} />
           </div>
         </div>
       </div>
 
       <div>
-        <CardGrid currencySelected={currency} />
+        <CardGrid currencySelected={currency} category={category} />
       </div>
 
       {/* <div className="w-full">

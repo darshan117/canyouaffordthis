@@ -6,10 +6,10 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-function calculateEMI(
+export function calculateEMI(
   principal: number,
   annualRate: number,
-  tenureMonths: number
+  tenureMonths: number,
 ): number {
   const monthlyRate = annualRate / 12 / 100;
 
@@ -34,7 +34,7 @@ export function canYou(minReqIncome: number, yourIncome: number) {
 export function minReqIncome(
   cost: number,
   downpayment: number,
-  percentage: number
+  percentage: number,
 ): number {
   // ((x - 20%x) ) * 100 / 10 =
   const d_payment = (downpayment / 100) * cost;

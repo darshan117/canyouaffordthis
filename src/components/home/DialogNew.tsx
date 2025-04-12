@@ -8,7 +8,8 @@ import {
 } from "@/components/ui/dialog";
 import { Product } from "@/lib/types";
 import Image from "next/image";
-import { minReqIncome, canYou } from "@/lib/utils";
+import { minReqIncome, canYou, calculateEMI } from "@/lib/utils";
+import { currencyToSymbolMap } from "@/data/currency";
 
 type DialogNewProps = {
   open: boolean;
@@ -23,17 +24,16 @@ export default function DialogNew({
   product,
   currencySelected,
 }: DialogNewProps) {
-  const min_Req_Income = minReqIncome(
-    parseInt(product.price[currencySelected]),
-    20,
-    10
-  );
+  const priceWithCommas = product.price[currencySelected]; // e.g., "1,999"
+  const priceWithoutCommas = priceWithCommas.replace(/,/g, "");
+
+  const min_Req_Income = minReqIncome(parseInt(priceWithoutCommas), 20, 10);
   const can_you = canYou(min_Req_Income, 10000);
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <div className="grid grid-cols-2">
-          <div>
+          <div className="mx-auto my-auto p-3">
             {" "}
             <Image
               src={product.image}
@@ -49,11 +49,15 @@ export default function DialogNew({
               <DialogTitle>{product.product_name}</DialogTitle>
             </DialogHeader>
             <p className="text-green-600 font-medium">
+              {currencyToSymbolMap[currencySelected]}{" "}
               {product.price[currencySelected]}
             </p>
             <br />
-            <p>Possible EMI : {product.description}</p>
-            <p>Min Required Income : {min_Req_Income.toFixed(2)} </p>
+            <p>Possible EMI : {product.product_name}</p>
+            <p>
+              Min Required Income : {currencyToSymbolMap[currencySelected]}{" "}
+              {min_Req_Income.toFixed(0)}{" "}
+            </p>
             <p>fact {}</p>
             <br />
             {can_you[1] ? (

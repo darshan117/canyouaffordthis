@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image, { StaticImageData } from "next/image";
+import { currencyToSymbolMap } from "@/data/currency";
 type ProductCardProps = {
   image: string | StaticImageData;
   product_name: string;
@@ -25,16 +26,16 @@ export default function ProductCard({
       <CardContent className="p-4 space-y-3">
         <Image
           src={image}
-          width={180}
-          height={100}
+          width={300}
+          height={300}
           alt="image"
-          className="h-auto mx-auto"
+          className="mx-auto"
         />
         <h3 className="text-lg font-semibold">{product_name}</h3>
         <p className="text-sm text-muted-foreground">{description}</p>
         <div className="flex items-center justify-between">
-          <span className="text-base font-medium text-green-600">
-            {price[currencySelected]}
+          <span className="text-base font-caveat text-green-600">
+            {currencyToSymbolMap[currencySelected]} {price[currencySelected]}
           </span>
           <Button onClick={onClick}>Can You?</Button>
         </div>
