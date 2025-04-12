@@ -17,7 +17,6 @@ export default function ProductCard({
   product_name,
   description,
   price,
-  category,
   currencySelected,
   onClick,
 }: ProductCardProps) {

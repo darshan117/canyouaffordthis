@@ -6,6 +6,9 @@ export const responses_n = [
   "This ain’t for you.",
   "Price > your life savings.",
   "You window-shopper.",
+  "💸 Yikes! Keep Dreaming",
+  "😂 Three Mortgages Needed",
+  "👑 For Royals Only",
   "Too rich for your blood.",
   "Not in this lifetime.",
   "You wish, peasant.",
@@ -17,6 +20,9 @@ export const responses_n = [
 
 export const responses_p = [
   "You can afford this.",
+  "✅ Fancy Pants Alert!",
+  "🤑 Treat Yo Self!",
+  "✅ Salary Flex!",
   "Well within budget.",
   "This has your name on it.",
   "You earned this.",
