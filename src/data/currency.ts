@@ -72,5 +72,5 @@ export const categoryToTenure: Record<string, number> = {
   Phone: 6,
   Car: 48,
   Watches: 6,
-  Electronics: 8,
+  "Luxury-Item": 8,
 };
