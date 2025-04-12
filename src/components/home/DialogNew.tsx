@@ -34,12 +34,13 @@ export default function DialogNew({
   const priceWithoutCommas = priceWithCommas.replace(/,/g, "");
   // const d_payment = (20 / 100) * parseInt(priceWithoutCommas); // 20 for 20 percent
   // const emi_without_dpayment = parseInt(priceWithoutCommas) - d_payment;
+  console.log("product category is ", product.category);
 
   console.log(categoryToTenure[category], "category");
   const emi = calculateEMI(
     parseInt(priceWithoutCommas),
-    categoryToEmi[product["category"]][currencySelected],
-    categoryToTenure[category],
+    categoryToEmi[product.category][currencySelected],
+    categoryToTenure[product.category],
   );
   console.log("emi is", emi);
   const min_Req_Income = minReqIncome(parseInt(priceWithoutCommas), 20, 10);
