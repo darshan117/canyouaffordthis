@@ -44,7 +44,7 @@ export const categoryToEmi: Record<string, Record<string, number>> = {
     AUD: 4.35,
     AED: 5.25,
   },
-  Electronics: {
+  "Luxury-Item": {
     USD: 11.66,
     INR: 9.15,
     CAD: 7.2,

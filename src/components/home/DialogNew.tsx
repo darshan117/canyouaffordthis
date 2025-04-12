@@ -19,6 +19,7 @@ type DialogNewProps = {
   product: Product;
   category: string;
   currencySelected: string;
+  amount: string;
 };
 
 export default function DialogNew({
@@ -26,12 +27,13 @@ export default function DialogNew({
   onOpenChange,
   product,
   category,
+  amount,
   currencySelected,
 }: DialogNewProps) {
   const priceWithCommas = product.price[currencySelected]; // e.g., "1,999"
   const priceWithoutCommas = priceWithCommas.replace(/,/g, "");
-  const d_payment = (20 / 100) * parseInt(priceWithoutCommas); // 20 for 20 percent
-  const emi_without_dpayment = parseInt(priceWithoutCommas) - d_payment;
+  // const d_payment = (20 / 100) * parseInt(priceWithoutCommas); // 20 for 20 percent
+  // const emi_without_dpayment = parseInt(priceWithoutCommas) - d_payment;
 
   console.log(categoryToTenure[category], "category");
   const emi = calculateEMI(
@@ -41,7 +43,7 @@ export default function DialogNew({
   );
   console.log("emi is", emi);
   const min_Req_Income = minReqIncome(parseInt(priceWithoutCommas), 20, 10);
-  const can_you = canYou(min_Req_Income, 10000);
+  const can_you = canYou(min_Req_Income, parseInt(amount));
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>

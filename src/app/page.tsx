@@ -3,7 +3,6 @@ import CardGrid from "@/components/home/CardGrid";
 import ChangeCategory from "@/components/home/ChangeCategory";
 import DropDown from "@/components/home/dropdownNew";
 import NumberInput from "@/components/home/NumberInput";
-import { Button } from "@/components/ui/button";
 
 import { useState } from "react";
 
@@ -46,7 +45,11 @@ export default function Home() {
       </div>
 
       <div>
-        <CardGrid currencySelected={currency} category={category} />
+        <CardGrid
+          currencySelected={currency}
+          category={category}
+          amount={amount}
+        />
       </div>
 
       {/* <div className="w-full">

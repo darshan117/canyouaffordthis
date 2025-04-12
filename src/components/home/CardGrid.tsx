@@ -7,9 +7,11 @@ import { Product } from "@/lib/types";
 export default function ProductGrid({
   currencySelected,
   category,
+  amount,
 }: {
   currencySelected: string;
   category: string;
+  amount: string;
 }) {
   const [open, setOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -45,6 +47,7 @@ export default function ProductGrid({
           currencySelected={currencySelected}
           category={category}
           product={selectedProduct}
+          amount={amount}
         />
       )}
     </>
