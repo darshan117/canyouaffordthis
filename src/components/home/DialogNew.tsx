@@ -38,8 +38,8 @@ export default function DialogNew({
   console.log(categoryToTenure[category], "category");
   const emi = calculateEMI(
     parseInt(priceWithoutCommas),
-    categoryToEmi[category][currencySelected],
-    categoryToTenure[category]
+    categoryToEmi[product["category"]][currencySelected],
+    categoryToTenure[category],
   );
   console.log("emi is", emi);
   const min_Req_Income = minReqIncome(parseInt(priceWithoutCommas), 20, 10);
