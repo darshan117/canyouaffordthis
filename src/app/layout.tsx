@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import og from "@/../public/og.png";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,10 +29,10 @@ export const metadata: Metadata = {
     title: "I Let a Website Roast My Salary - Here's What Happened 🍿",
     description:
       "From 'Maybe' to 'Never in This Lifetime' - See How Your Income Stacks Against Crazy Purchases!",
-    url: "https://yourdomain.com/salary-reality-check",
+    url: og.src,
     images: [
       {
-        url: "https://yourdomain.com/og-salary-roast.png",
+        url: og.src,
         alt: "Funny comparison showing iPhone = Maybe, Porsche = NOPE",
       },
     ],
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
     title: "Tag Someone Who Needs This Financial Wake-Up Call 🔔",
     description:
       "Just input salary → Get brutally honest answers about what you can afford. Share your results! 😈",
-    images: ["https://yourdomain.com/twitter-salary-meme.jpg"],
+    images: [og.src],
   },
 };
 
