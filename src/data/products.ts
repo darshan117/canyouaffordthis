@@ -39,7 +39,7 @@ export const products = [
     image: mazda,
     product_name: "Mazda 3",
     description: "Sporty design, premium interior, great handling",
-    price: { USD: "25,000", INR: "2,000,000" },
+    price: { USD: "25,000", INR: "1,000,000" },
     category: "Car",
   },
   {

@@ -14,6 +14,7 @@ export default function ProductGrid({
   const [open, setOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
+  console.log("category", category);
   const handleClick = (product: Product) => {
     setSelectedProduct(product);
     setOpen(true);
@@ -42,6 +43,7 @@ export default function ProductGrid({
           open={open}
           onOpenChange={setOpen}
           currencySelected={currencySelected}
+          category={category}
           product={selectedProduct}
         />
       )}
