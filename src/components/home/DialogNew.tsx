@@ -37,7 +37,7 @@ export default function DialogNew({
   const emi = calculateEMI(
     parseInt(priceWithoutCommas),
     categoryToEmi[category][currencySelected],
-    categoryToTenure[category],
+    categoryToTenure[category]
   );
   console.log("emi is", emi);
   const min_Req_Income = minReqIncome(parseInt(priceWithoutCommas), 20, 10);
@@ -57,33 +57,51 @@ export default function DialogNew({
             />{" "}
           </div>
 
-          <div>
+          <div className="space-y-4 p-4">
             <DialogHeader>
-              <DialogTitle>{product.product_name}</DialogTitle>
+              <DialogTitle className="text-2xl font-semibold text-gray-800">
+                {product.product_name}
+              </DialogTitle>
             </DialogHeader>
-            <p className="text-green-600 font-medium">
+
+            <p className="text-xl text-green-600 font-bold">
               {currencyToSymbolMap[currencySelected]}{" "}
               {product.price[currencySelected]}
             </p>
-            <br />
-            <p>
-              Possible EMI :{currencyToSymbolMap[currencySelected]} {emi}
+
+            {/* Description */}
+            <p className="text-gray-700 text-sm leading-relaxed">
+              {product.description}
             </p>
-            <p>
-              Min Required Income : {currencyToSymbolMap[currencySelected]}{" "}
-              {min_Req_Income.toFixed(0)}{" "}
-            </p>
-            <p>fact {}</p>
-            <br />
-            {can_you[1] ? (
-              <p className="bg-gray-100 text-red-700 text-center p-1">
-                {can_you[0]}
-              </p>
-            ) : (
-              <p className="bg-gray-100 text-green-700 text-center p-1">
-                {can_you[0]}
-              </p>
-            )}
+
+            {/* EMI & Income Info */}
+            <div className="bg-gray-50 border p-2 space-y-3 text-sm text-gray-800">
+              <div className="">
+                <span className="font-semibold">💳 Possible EMI:</span> <br />
+                <span className="font-medium">
+                  {currencyToSymbolMap[currencySelected]} {emi}
+                </span>
+              </div>
+              <div className="">
+                <span className="font-semibold">📈 Min Required Income:</span>
+                <br />
+                <span className="font-medium">
+                  {currencyToSymbolMap[currencySelected]}{" "}
+                  {min_Req_Income.toFixed(0)} /month
+                </span>
+              </div>
+            </div>
+
+            {/* Eligibility Result */}
+            <div
+              className={`text-center p-2 text-sm font-medium ${
+                can_you[1]
+                  ? "bg-red-100 text-red-700"
+                  : "bg-green-100 text-green-700"
+              }`}
+            >
+              {can_you[0]}
+            </div>
           </div>
         </div>
       </DialogContent>
