@@ -35,11 +35,12 @@ export function minReqIncome(
   cost: number,
   downpayment: number,
   percentage: number,
+  tenure: number,
 ): number {
   // ((x - 20%x) ) * 100 / 10 =
   const d_payment = (downpayment / 100) * cost;
   const per = percentage / 100;
-  const res = (cost - d_payment) / (per * 12);
+  const res = (cost - d_payment) / (per * tenure);
   console.log(d_payment, per, res, cost);
   return res;
   // return parseFloat(

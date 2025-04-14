@@ -43,7 +43,12 @@ export default function DialogNew({
     categoryToTenure[product.category],
   );
   console.log("emi is", emi);
-  const min_Req_Income = minReqIncome(parseInt(priceWithoutCommas), 20, 10);
+  const min_Req_Income = minReqIncome(
+    parseInt(priceWithoutCommas),
+    20,
+    10,
+    categoryToTenure[product.category],
+  );
   const can_you = canYou(min_Req_Income, parseInt(amount));
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
