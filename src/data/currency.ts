@@ -44,17 +44,6 @@ export const categoryToEmi: Record<string, Record<string, number>> = {
     AUD: 4.35,
     AED: 5.25,
   },
-  Laptop: {
-    USD: 11.66,
-    INR: 9.15,
-    CAD: 7.2,
-    EUR: 7.77,
-    JPY: 0.5,
-    RUB: 21,
-    CNY: 3.45,
-    AUD: 4.35,
-    AED: 5.25,
-  },
   "Luxury-Item": {
     USD: 11.66,
     INR: 9.15,
@@ -84,5 +73,4 @@ export const categoryToTenure: Record<string, number> = {
   Car: 48,
   Watches: 6,
   "Luxury-Item": 36,
-  Laptop: 6,
 };
