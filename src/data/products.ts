@@ -198,7 +198,7 @@ export const products = [
       AUD: "4,00,000",
       AED: "9,60,000",
     },
-    category: "Luxury-Item",
+    category: "Car",
   },
   {
     image: civic,
